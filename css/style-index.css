@@ -1,0 +1,14 @@
+.contenedor-card{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.card-pokemon{
+    width: 300px;
+}
+
+.imagen{
+    text-align: center;
+}
+

@@ -4,9 +4,9 @@ $(document).ready(function () {
             url: "https://pokeapi.co/api/v2/pokemon/" + $("#txt_buscador").val(),
             contentType: "application/json",
             success: function (data) {
-                console.log(data.sprites.other.home.front_default)
-                $(".imagen").html(`<img src="${data.sprites.other.home.front_default}">`)
-                
+                console.log(data.name)
+                $(".imagen").html(`<img src="${data.sprites.other.home.front_default}" width="250px">`)
+                $(".card-title").text(`${data.name}`);
             }
         })
     })
