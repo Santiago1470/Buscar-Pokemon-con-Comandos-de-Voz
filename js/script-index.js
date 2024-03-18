@@ -5,6 +5,7 @@ $(document).ready(function () {
             contentType: "application/json",
             success: function (data) {
                 console.log(data)
+                
                 // $(".imagen").html(`<img src="${data.sprites.other.home.front_default}" width="250px">`)
                 // $(".info-p-pokemon").html(`<p class="card-text">Experiencia básica: ${data.base_experience}</p><p class="card-text">Altura: ${data.height}</p><p class="card-text">Peso: ${data.weight}</p>`)
 
@@ -72,6 +73,36 @@ $(document).ready(function () {
                 $(".contenedor-card").html(cardPokemon2)
 
             }
+        }).fail((jqXHR, textStatus, errorThrown) => {
+            if(jqXHR.status == "404"){
+                let nombreP = $("#txt_buscador").val()
+                let mensaje = `
+                <div class="modal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `
+
+                $("#exampleModal").attr("class", "modal fade show")
+                $("#exampleModal").attr("style", "display: block")
+
+                // myModalAlternative.show()
+                //alert(`Error 404, el pokémon con el nombre ${nombreP} no existe`)
+                
+            }
         })
     })
 })
@@ -84,4 +115,9 @@ txtBuscador.addEventListener("keypress", () => {
 function buscarPokemon() {
 
 }
+// const myModalAlternative = new bootstrap.Modal('#myModal', options)
+
+var modal = document.querySelector("#exampleModal");
+
+modal.setAttribute("class", "modal fade");
 
