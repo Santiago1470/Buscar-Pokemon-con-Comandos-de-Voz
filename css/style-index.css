@@ -46,3 +46,7 @@
     transform: scale(0.9);
     transition: all ease 200ms;
 }
+
+#modalError{
+    background-color: rgba(128, 128, 128, 0.418);
+}

@@ -95,10 +95,10 @@ $(document).ready(function () {
                     </div>
                 </div>
                 `
-
-                $("#exampleModal").attr("class", "modal fade show")
-                $("#exampleModal").attr("style", "display: block")
-
+                
+                $("#modalError").attr("class", "modal fade show").attr("style", "display: block")
+                // $("#modalError")
+                $(".modal-body").html(`<p>El pokémon con el nombre <strong>${nombreP}</strong> no existe.</p>`)
                 // myModalAlternative.show()
                 //alert(`Error 404, el pokémon con el nombre ${nombreP} no existe`)
                 
@@ -115,9 +115,12 @@ txtBuscador.addEventListener("keypress", () => {
 function buscarPokemon() {
 
 }
-// const myModalAlternative = new bootstrap.Modal('#myModal', options)
 
-var modal = document.querySelector("#exampleModal");
+var modal = document.querySelector("#modalError");
+var botonCerrarModal = document.querySelector("#btn-cerrarModal");
+function cerrarModal(){
+    modal.setAttribute("class", "modal fade");
+    modal.style.display = "none";
+}
 
-modal.setAttribute("class", "modal fade");
 

@@ -48,7 +48,7 @@ artyom.initialize({
     debug: true,
     listen: true,
     continuous: true,
-    speed: 0.9,
+    speed: 1,
     mode: "normal",
     obeyKeyword: "activar comandos de voz"
 });
