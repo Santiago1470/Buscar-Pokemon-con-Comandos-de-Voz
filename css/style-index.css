@@ -16,3 +16,33 @@
 .titulo-card::first-letter{
     text-transform: capitalize;
 }
+
+
+.barra {
+    text-align: right;
+    height: 20px;
+    width: 65%;
+    background-color: rgb(255, 0, 0);
+}
+
+.barra p{
+    color: black;
+    margin: auto 0px;
+    height: 20px;
+}
+
+#activar{
+    margin: auto 0px;
+    cursor: pointer;
+}
+
+#activar:hover{
+    transform: scale(1.05);
+    transition: all ease 100ms;
+}
+
+#activar:active{
+    color: rgb(172, 172, 172);
+    transform: scale(0.9);
+    transition: all ease 200ms;
+}
