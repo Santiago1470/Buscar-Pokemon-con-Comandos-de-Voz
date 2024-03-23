@@ -1,3 +1,24 @@
+const tipoPorColor = {
+    'normal': '#808080',
+    'fighting': '#FFA07A',
+    'flying': '##00BFFF',
+    'poison': '#2E8B57',
+    'ground': '#8B4513',
+    'rock': '#DCDCDC',
+    'bug': '#FF6347',
+    'ghost': '#7B68EE',
+    'steel': '#E6E6FA',
+    'fire': 'red',
+    'water': '#00FFFF',
+    'grass': '#556B2F',
+    'electric': '#FFD700',
+    'psychic': 'pink',
+    'ice': '#B0E0E6',
+    'dragon': '#B8860B', 
+    'dark': 'black', 
+    'fairy': '#D8BFD8'
+};
+
 $(document).ready(function () {
     $("#buscar").on("click", () => {
         $.ajax({
@@ -5,52 +26,40 @@ $(document).ready(function () {
             contentType: "application/json",
             success: function (data) {
                 console.log(data)
-                
-                // $(".imagen").html(`<img src="${data.sprites.other.home.front_default}" width="250px">`)
-                // $(".info-p-pokemon").html(`<p class="card-text">Experiencia básica: ${data.base_experience}</p><p class="card-text">Altura: ${data.height}</p><p class="card-text">Peso: ${data.weight}</p>`)
-
-                // $(".card-title").text(`${data.name}`)
-                // $(".base-experience").text(`Experiencia básica: ${data.base_experience}`)
-                // $(".height").text(`Altura: ${data.height}`)
-                // $(".weight").text(`Peso: ${data.base_experience}`)
-                // $(".base-experience").append(` ${data.base_experience}`)
-                // $(".info-p-pokemon").append(`<p class="card-text">Altura: ${data.height}<p/>`);
-                // $(".info-p-pokemon").append(`<p class="card-text">Peso: ${data.weight}<p/>`);
-                // $(".info-p-pokemon").html(`<p class="card-text">Experiencia básica: ${data.base_experience}</p>
-                // <p class="card-text">Altura: ${data.height}<p/>
-                // <p class="card-text">Peso: ${data.weight}<p/>`)
-
+                let tipo = data.types[0].type.name;
+                let colorTipo = tipoPorColor[tipo];
+                let mov1= (data.abilities[0].ability.name).toUpperCase();
+                let mov2 =(data.abilities[1].ability.name).toUpperCase();
                 var cardPokemon = `
                 <div class="card card-pokemon">
                     <div class="imagen">
-                        <img src="${data.sprites.other.home.front_default}" width="250px">
+                        <img src="${data.sprites.other.home.front_default}" width="250px" id="pokemon">
                     </div>
-                        <!-- <img class="card-img-top" alt="Pokemon"> -->
                     <div class="card-body info-p-pokemon">
                         <h5 class="card-title titulo-card">${data.name}</h5>
-                        <p class="card-text">Altura: ${data.height}</p>
-                        <p class="card-text">Peso: ${data.weight}</p>
+                        <p class="card-text">Movimientos:</p>
+                        <ul>
+                        <p class="card-text">Movimiento: ${mov1}</p>
+                        <p class="card-text">Movimiento: ${mov2}</p>
+                        </ul>
+                        <p class="card-text">Altura: ${data.height} pies</p>
+                        <p class="card-text">Peso: ${data.weight} libras</p>
+                        <p class="card-text">Tipo: ${tipo}</p>
+                        <p class="card-text">Puntos de Vida: ${data.stats[0].base_stat}</p>
+                        <p class="card-text">Puntos de Ataque: ${data.stats[1].base_stat}</p>
+                        <p class="card-text">Puntos de Defensa: ${data.stats[2].base_stat}</p>
+                        <p class="card-text">Velocidad: ${data.stats[5].base_stat}</p>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Tipo: ${data.types[0].type.name}</li>
-                        <ul class="list-group list-group-flush">        </ul>
-                        <li class="list-group-item">Puntos de Vida: ${data.stats[0].base_stat}</li>
-                        <li class="list-group-item">Puntos de Ataque: ${data.stats[1].base_stat}</li>
-                        <li class="list-group-item">Puntos de Defensa: ${data.stats[2].base_stat}</li>
-                        <li class="list-group-item">Velocidad: ${data.stats[5].base_stat}</li>
-                    </ul>
-                    <!-- <div class="card-body">
-                        <a href="#" class="card-link">Card link</a>
-                        <a href="#" class="card-link">Another link</a>
-                    </div> -->
                 </div>
                 `;
-                $(".contenedor-card").html(cardPokemon)
-
+                $(".contenedor-card").html(cardPokemon);
+                $(".card-pokemon").css("box-shadow", `10px 7px 10px ${colorTipo}`); 
+                $("#pokemon").css("filter", `drop-shadow(10px 7px 10px ${colorTipo})`); 
+                $(".card-pokemon").css("background-color", `${colorTipo}90`); 
             }
         }).fail((jqXHR, textStatus, errorThrown) => {
-            if(jqXHR.status == "404"){
-                let nombreP = $("#txt_buscador").val()
+            if (jqXHR.status == "404") {
+                let nombreP = $("#txt_buscador").val();
                 let mensaje = `
                 <div class="modal" tabindex="-1">
                     <div class="modal-dialog">
@@ -69,31 +78,24 @@ $(document).ready(function () {
                         </div>
                     </div>
                 </div>
-                `
-                
-                $("#modalError").attr("class", "modal fade show").attr("style", "display: block")
-                // $("#modalError")
-                $(".modal-body").html(`<p>El pokémon con el nombre <strong>${nombreP}</strong> no existe.</p>`)
-                // myModalAlternative.show()
-                //alert(`Error 404, el pokémon con el nombre ${nombreP} no existe`)
-                
+                `;
+
+                $("#modalError").attr("class", "modal fade show").attr("style", "display: block");
+                $(".modal-body").html(`<img src="files/error.png"><p>El pokémon con el nombre <strong>${nombreP}</strong> no existe.</p>`);
             }
-        })
-    })
-})
+        });
+    });
+});
 
 var txtBuscador = document.querySelector("#txt_buscador");
 txtBuscador.addEventListener("keypress", () => {
 
 });
 
-function buscarPokemon() {
-
-}
 
 var modal = document.querySelector("#modalError");
 var botonCerrarModal = document.querySelector("#btn-cerrarModal");
-function cerrarModal(){
+function cerrarModal() {
     modal.setAttribute("class", "modal fade");
     modal.style.display = "none";
 }

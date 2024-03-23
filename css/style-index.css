@@ -1,52 +1,103 @@
-.contenedor-card{
+.contenedor-card {
+    background-image: url(../files/fondo.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
-    padding-top: 30px;
+    align-items: center;
+    height: 94vh;
+    padding-top: 0px;
 }
 
-.card-pokemon{
-    width: 300px;
-}
-
-.imagen{
+h5 {
     text-align: center;
-    border-bottom: 1px solid rgb(185, 185, 185);
 }
 
-.titulo-card::first-letter{
+.card-pokemon {
+    width: 350px;
+    height: auto;
+    border: none;
+}
+
+.card-pokemon:first-child{
+    opacity: 1;
+}
+
+.imagen {
+    display: flex;
+    width: 300px;
+    height: 280px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#pokemon {
+    border: 5px outset wheat;
+    border-radius: 15px;
+    background-color: #FFFFFF99;
+}
+
+.titulo-card{
+    color: #FFFFFF;
+    font-family: cursive;
+}
+.card-text{
+    color: #FFFFFF;
+    font-family: cursive;
+}
+.titulo-card::first-letter {
     text-transform: capitalize;
 }
 
-
-.barra {
-    text-align: right;
-    height: 20px;
-    width: 65%;
-    background-color: rgb(255, 0, 0);
-}
-
-.barra p{
-    color: black;
-    margin: auto 0px;
-    height: 20px;
-}
-
-#activar{
+#activar {
     margin: auto 0px;
     cursor: pointer;
 }
 
-#activar:hover{
+#activar:hover {
     transform: scale(1.05);
     transition: all ease 100ms;
 }
 
-#activar:active{
+#activar:active {
     color: rgb(172, 172, 172);
     transform: scale(0.9);
     transition: all ease 200ms;
 }
 
-#modalError{
-    background-color: rgba(128, 128, 128, 0.418);
+.modal {
+    --bs-modal-margin: 8rem;
+}
+
+.modal-content {
+    background-color: rgba(128, 128, 128, 0.5);
+    --bs-modal-header-border-color: rgba(128, 128, 128, 0.5);
+    --bs-modal-footer-border-color: rgba(128, 128, 128, 0.5);
+}
+
+.modal-body {
+    align-self: center;
+}
+
+.modal-content {
+    width: 85%;
+}
+
+.btn-info {
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-active-color: #FFFFFF;
+    --bs-btn-disabled-bg: transparent;
+}
+
+.btn-outline-info {
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-active-color: #FFFFFF;
+}
+
+.info-p-pokemon {
+    margin: 0 auto;
+    width: 300px;
 }

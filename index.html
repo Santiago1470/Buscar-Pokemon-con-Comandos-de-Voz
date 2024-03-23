@@ -17,33 +17,33 @@
 
 <body class="contenedor-body">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid d-flex">
             <a class="navbar-brand" href="#">Buscador de Pokémons</a>
             <p id="activar">Activar comandos de voz</p>
         </div>
         <div class="container-fluid d-flex " >
-            <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar">
+            <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon">
             <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-            <input id="buscar" class="btn btn-outline-info" type="button" value="Buscar" >
+            <input id="buscar" class="btn btn-outline-info"  type="button" value="Buscar" >
         </div>
     </nav>
-    <section class="contenedor-card">
+    <section class="contenedor-card bg-dark">
 
     </section>
     <!-- Modal -->
-    <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true">
+    <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalErrorLabel">404: Not Found</h1>
+                    <h1 class="modal-title fs-5" id="modalErrorLabel">Error 404: Pokémon no encontrado</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarModal()"></button>
                 </div>
                 <div class="modal-body">
-                    
+                    <ul><li></li></ul>
                 </div>
                 <div class="modal-footer">
-                    <button id="btn-cerrarModal" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="cerrarModal()">Cerrar</button>
+                    <button id="btn-cerrarModal" type="button" class="btn btn-info"  onclick="cerrarModal()">Cerrar</button>
                 </div>
             </div>
         </div>
