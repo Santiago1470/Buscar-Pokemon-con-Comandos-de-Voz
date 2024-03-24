@@ -20,7 +20,7 @@ h5 {
     border: none;
 }
 
-.card-pokemon:first-child{
+.card-pokemon:first-child {
     opacity: 1;
 }
 
@@ -39,14 +39,16 @@ h5 {
     background-color: #FFFFFF99;
 }
 
-.titulo-card{
+.titulo-card {
     color: #FFFFFF;
     font-family: cursive;
 }
-.card-text{
+
+.card-text {
     color: #FFFFFF;
     font-family: cursive;
 }
+
 .titulo-card::first-letter {
     text-transform: capitalize;
 }
@@ -100,4 +102,28 @@ h5 {
 .info-p-pokemon {
     margin: 0 auto;
     width: 300px;
+}
+
+.autocompletar {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #fff;
+    width: 569px;
+    font-family: cursive;
+}
+ul{
+    list-style: none;
+}
+.ui-helper-hidden-accessible{
+    display: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+.ui-helper-hidden-accessible div{
+    display: none;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
 }
