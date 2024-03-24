@@ -82,7 +82,6 @@ $(document).ready(function () {
 
                 $("#modalError").attr("class", "modal fade show").attr("style", "display: block");
                 $(".modal-body").html(`<img src="files/error.png"><p>El pokémon con el nombre <strong>${nombreP}</strong> no existe.</p>`);
-                $("body").attr("style", "overflow-y: hidden")
             }
         });
     });
@@ -96,11 +95,9 @@ txtBuscador.addEventListener("keypress", () => {
 
 var modal = document.querySelector("#modalError");
 var botonCerrarModal = document.querySelector("#btn-cerrarModal");
-var body = document.querySelector("body");
 function cerrarModal() {
     modal.setAttribute("class", "modal fade");
     modal.style.display = "none";
-    body.style.overflowY = "visible";
 }
 
 
