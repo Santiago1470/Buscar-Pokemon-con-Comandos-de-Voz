@@ -8,14 +8,14 @@ const tipoPorColor = {
     'bug': '#FF6347',
     'ghost': '#7B68EE',
     'steel': '#E6E6FA',
-    'fire': 'red',
+    'fire': '#DC143C',
     'water': '#00FFFF',
     'grass': '#556B2F',
     'electric': '#FFD700',
-    'psychic': 'pink',
+    'psychic': '#FF69B4',
     'ice': '#B0E0E6',
     'dragon': '#B8860B', 
-    'dark': 'black', 
+    'dark': '#000000', 
     'fairy': '#D8BFD8'
 };
 
