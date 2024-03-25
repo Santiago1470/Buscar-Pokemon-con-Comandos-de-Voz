@@ -34,7 +34,7 @@ $(document).ready(function () {
                 var cardPokemon = `
                 <div class="card card-pokemon">
                     <div class="imagen">
-                    <img src="${normal}" width="250px" id="pokemon">
+                    <img src="${data.sprites.front_default}" width="250px" id="pokemon">
                     <button id="toggleImageBtn">Cambiar a shiny</button>
                     </div>
                     <div class="card-body info-p-pokemon">
