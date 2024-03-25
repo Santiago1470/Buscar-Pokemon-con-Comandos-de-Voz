@@ -18,8 +18,6 @@ const tipoPorColor = {
     'dark': '#000000',
     'fairy': '#D8BFD8'
 };
-
-
 $(document).ready(function () {
     $("#buscar").on("click", () => {
         $.ajax({
