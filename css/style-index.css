@@ -1,13 +1,17 @@
-.contenedor-card {
+body{
     background-image: url(../files/fondo.png);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+}
+
+.contenedor-card {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 94vh;
-    padding-top: 0px;
+    /*height: 94vh;*/
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 h5 {
