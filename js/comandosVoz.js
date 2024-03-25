@@ -50,7 +50,7 @@ artyom.initialize({
     continuous: true,
     speed: 1,
     mode: "normal",
-    oberyKeyword: "Buscar por voz"
+    obeyKeyword: "Buscar por voz"
     // obeyKeyword: "activar comandos de voz"
 });
 
