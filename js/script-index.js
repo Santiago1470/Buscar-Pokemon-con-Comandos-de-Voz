@@ -56,7 +56,7 @@ $(document).ready(function () {
                 $(".contenedor-card").html(cardPokemon);
                 $(".card-pokemon").css("box-shadow", `10px 7px 10px ${colorTipo}`);
                 $("#pokemon").css("filter", `drop-shadow(10px 7px 10px ${colorTipo})`);
-                $(".card-pokemon").css("background-color", `${colorTipo}90`);
+                $(".card-pokemon").css("background-color", `${colorTipo}20`);
             }
         }).fail((jqXHR, textStatus, errorThrown) => {
             if (jqXHR.status == "404") {
