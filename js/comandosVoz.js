@@ -12,6 +12,7 @@ activarComandos.addEventListener('click', function () {
         artyom.obey();
         //activarComandos.textContent = "Desactivar comandos de voz";
         activado = true;
+        comandoVoz = false;
     } else {
         // artyom.say("Comandos de voz desactivados");
         // artyom.dontObey();
@@ -19,14 +20,22 @@ activarComandos.addEventListener('click', function () {
         // activado = false;
     }
 });
-
+var comandoVoz = false;
 artyom.addCommands({
-    indexes: ["comando"/*, "activar comandos de voz", "desactivar comandos de voz", "buscar"*/],
+    indexes: ["comando", "Buscar por voz"/*, "activar comandos de voz", "desactivar comandos de voz", "buscar"*/],
     action: function (i) {
         if (i == 0) {
             console.log("recibido");
 
-        }// else if(i == 1){
+        } else if (i == 1) {
+            let txtBuscador = document.querySelector("#txt_buscador");
+            let buscar = textoPorVoz.split(" ");
+            txtBuscador.value = buscar[buscar.length - 1].toLowerCase();
+            document.querySelector("#buscar").click();
+            artyom.dontObey()
+            comandoVoz = false;
+        }
+        // else if(i == 1){
         //     artyom.obey();
         //     artyom.say("Comandos de voz activados");
         //     activarComandos.textContent = "Desactivar comandos de voz";
@@ -59,10 +68,16 @@ artyom.redirectRecognizedTextOutput(function (recognized, isFinal) {
     if (isFinal) {
         console.log("Texto final reconocido: " + recognized);
         textoPorVoz = recognized;
-        let txtBuscador = document.querySelector("#txt_buscador");
+        let buscar = textoPorVoz.trim().split(" ");
+        if(buscar[0] == "Buscar"){
+            comandoVoz = true;
+        }
+        if (!comandoVoz) {
+            let txtBuscador = document.querySelector("#txt_buscador");
             txtBuscador.value = textoPorVoz.trim();
             document.querySelector("#buscar").click();
-        artyom.dontObey();
+            artyom.dontObey();
+        }
         activado = false;
     } else {
         console.log(recognized);
