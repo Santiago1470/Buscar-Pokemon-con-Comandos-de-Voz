@@ -18,7 +18,17 @@ const tipoPorColor = {
     'dark': '#000000',
     'fairy': '#D8BFD8'
 };
+
+function hexToRGBA(hex, alpha) {
+    hex = hex.replace('#', '');
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 $(document).ready(function () {
+    
     $("#buscar").on("click", () => {
         $.ajax({
             url: "https://pokeapi.co/api/v2/pokemon/" + ($("#txt_buscador").val()).toLowerCase(),
@@ -29,6 +39,7 @@ $(document).ready(function () {
                 let colorTipo = tipoPorColor[tipo];
                 let mov1 = (data.abilities[0].ability.name).toUpperCase();
                 let mov2 = data.abilities.length > 1 ? (data.abilities[1].ability.name).toUpperCase() : "No existe";
+                let rgbaColor = hexToRGBA(colorTipo, 0.4);
                 var cardPokemon = `
                 <div class="card card-pokemon">
                     <div class="imagen">
@@ -51,10 +62,12 @@ $(document).ready(function () {
                     </div>
                 </div>
                 `;
+                
                 $(".contenedor-card").html(cardPokemon);
+                $(".card-pokemon").css("background-color", rgbaColor);
                 $(".card-pokemon").css("box-shadow", `10px 7px 10px ${colorTipo}`);
                 $("#pokemon").css("filter", `drop-shadow(10px 7px 10px ${colorTipo})`);
-                $(".card-pokemon").css("background-color", `${colorTipo}20`);
+
             }
         }).fail((jqXHR, textStatus, errorThrown) => {
             if (jqXHR.status == "404") {
@@ -88,7 +101,6 @@ var txtBuscador = document.querySelector("#txt_buscador");
 txtBuscador.addEventListener("keypress", () => {
 
 });
-
 
 var modal = document.querySelector("#modalError");
 var botonCerrarModal = document.querySelector("#btn-cerrarModal");

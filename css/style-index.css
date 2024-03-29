@@ -25,7 +25,7 @@ h5 {
 }
 
 .card-pokemon:first-child {
-    opacity: 1;
+    background-color: 90%; 
 }
 
 .imagen {
