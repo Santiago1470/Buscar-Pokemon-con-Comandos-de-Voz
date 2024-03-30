@@ -20,5 +20,5 @@ Nota: recuerde que para hacer búsquedas con la voz, debe tener micrófono en su
 * Artyom.js para el reconocimiento de voz y que se permitiera añadir comandos de voz y lograr la síntesis de texto en la página web
 
 ## Autores
-Andrés Felipe Patarrollo Muñoz
+Andrés Felipe Patarrollo Muñoz  
 Santiago Jair Torres Rivera
