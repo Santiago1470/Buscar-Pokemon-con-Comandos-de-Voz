@@ -148,3 +148,12 @@ ul li {
 ul li:hover {
     background-color: rgb(0, 255, 255);
 }
+
+.contenedor-logo {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.contenedor-logo img{
+    width: 40%;
+}
