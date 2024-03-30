@@ -21,5 +21,5 @@ Nota: recuerde que para hacer búsquedas con la voz, debe tener micrófono en su
 * PokeAPI para el consumo de recursos y obtener la información necesaria sobre cualquier Pokémon
 
 ## Autores
-Andrés Felipe Patarrollo Muñoz  
+Andrés Felipe Patarroyo Muñoz  
 Santiago Jair Torres Rivera
