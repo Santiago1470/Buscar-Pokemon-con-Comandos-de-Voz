@@ -1,6 +1,7 @@
 # Buscar-Pokemon-con-Comandos-de-Voz
-Desarrollo de una página web que permite la búsqueda de pokémones por medio del uso de una API de pokemones y con posibilidad del uso de de comandos de voz para las búsquedas
-# Instrucciones de uso
+## Descripción
+Este proyecto se centra en aprovechar la API PokeAPI para desarrollar una página web interactiva sobre Pokémon. La aplicación no solo presenta datos como el nombre y tipo de Pokémon, sino que también ofrece una función de búsqueda innovadora que permite a los usuarios encontrar Pokémon utilizando su voz, gracias al uso del micrófono. Este enfoque integrado de tecnologías web modernas y recursos de API proporciona una experiencia única y envolvente para los entusiastas de Pokémon.
+## Instrucciones de uso
 Para hacer uso de la página web debe abrir el link que proporciona GitHub para páginas web con HTML, CSS y JavaScript, el link de la página es: https://santiago1470.github.io/Buscar-Pokemon-con-Comandos-de-Voz/  
 Una vez se encuentre dentro del sitio web, podrá observar tres opciones o componentes importantes en la parte superior, por el lado superior extremo derecho, encontrará el botón "Buscar" y al lado izquierdo de él, un campo de entrada de texto para escribir el nombre del Pokémon, y finalmente, al lado izquierdo de ese componente se encuentra el botón "Buscar por voz". Adicionalmente, en la parte superior izquierda encontrará el nombre del sitio web.  
 Para realizar la búsqueda de un Pokémon hay tres opciones:  
@@ -10,3 +11,14 @@ Para realizar la búsqueda de un Pokémon hay tres opciones:
   
 En caso de que el Pokémon no sea encontrado, la página le devolverá un mensaje indicando que lo que ha sucedido, y deberá dar clic en la "x" o en el botón "Cerrar" para hacer una nueva búsqueda.  
 Nota: recuerde que para hacer búsquedas con la voz, debe tener micrófono en su dispositivo y dar el permiso requerido al sitio para hacer uso de su micrófono.
+
+## Tecnologías usadas
+* HTML y CSS para la maquetación, diseño y decoración de la página web
+* JavaScript para capturar los eventos provocados por el usuario
+* JQuery para un manejo más rápido y simplificado de componentes del DOM
+* Ajax para lograr hacer peticiones a la API de forma asincrónica, es decir, en segundo plano
+* Artyom.js para el reconocimiento de voz y que se permitiera añadir comandos de voz y lograr la síntesis de texto en la página web
+
+## Autores
+Andrés Felipe Patarrollo Muñoz
+Santiago Jair Torres Rivera
