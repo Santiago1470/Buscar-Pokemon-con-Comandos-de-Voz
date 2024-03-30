@@ -18,6 +18,7 @@ Nota: recuerde que para hacer búsquedas con la voz, debe tener micrófono en su
 * JQuery para un manejo más rápido y simplificado de componentes del DOM
 * Ajax para lograr hacer peticiones a la API de forma asincrónica, es decir, en segundo plano
 * Artyom.js para el reconocimiento de voz y que se permitiera añadir comandos de voz y lograr la síntesis de texto en la página web
+* PokeAPI para el consumo de recursos y obtener la información necesaria sobre cualquier Pokémon
 
 ## Autores
 Andrés Felipe Patarrollo Muñoz  
