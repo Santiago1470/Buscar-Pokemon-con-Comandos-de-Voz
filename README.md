@@ -13,7 +13,7 @@ En caso de que el Pokémon no sea encontrado, la página le devolverá un mensaj
 Nota: recuerde que para hacer búsquedas con la voz, debe tener micrófono en su dispositivo y dar el permiso requerido al sitio para hacer uso de su micrófono.
 
 ## Tecnologías usadas
-* HTML y CSS para la maquetación, diseño y decoración de la página web
+* HTML, CSS y Bootstrap para la maquetación, diseño y decoración de la página web
 * JavaScript para capturar los eventos provocados por el usuario
 * JQuery para un manejo más rápido y simplificado de componentes del DOM
 * Ajax para lograr hacer peticiones a la API de forma asincrónica, es decir, en segundo plano
