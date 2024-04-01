@@ -55,11 +55,26 @@ h5 {
 }
 
 #activar {
-    margin: auto 0px;
-    cursor: pointer;
+    /* margin: auto 0px; */
+    /* cursor: pointer; */
+    background-color: #4770D9;
+    color: white;
+    /* border: 1px solid #254390; */
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.1rem;
+    box-shadow: 0px 3px 6px 3px rgb(61, 61, 61);
+    transition: transform 0.3s, box-shadow 0.2s;
 }
 
-#activar:hover {
+#activar:active {
+    transform: translateY(2px);
+    box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #254390;
+}
+
+/* #activar:hover {
     transform: scale(1.05);
     transition: all ease 100ms;
 }
@@ -68,7 +83,74 @@ h5 {
     color: rgb(172, 172, 172);
     transform: scale(0.9);
     transition: all ease 200ms;
+} */
+
+.contendor-buscador {
+    padding: 10px;
+    text-align: center;
 }
+
+.contendor-buscador .buscador {
+    padding: 5px;
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 1.1rem;
+}
+
+.contendor-buscador .buscador:focus{
+    /*border: 1.6px solid rgb(128, 128, 128);*/
+    outline: 1.5px solid rgb(94, 94, 94);
+}
+
+.btn-buscar {
+    background-color: #D2D200;
+    color: white;
+    /* border: 1px solid #254390; */
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.1rem;
+    box-shadow: 0px 3px 6px 3px rgb(61, 61, 61);
+    transition: transform 0.3s, box-shadow 0.2s;
+}
+
+.btn-buscar:active {
+    transform: translateY(2px);
+    box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #254390;
+}
+
+
+.contenedor-pokemones {
+    padding: 10px 0px 0px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 15px;
+    width: 80%;
+    margin: 0px auto;
+    justify-content: center;
+}
+
+.card-pokemon {
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+    background-color: rgb(205, 205, 205);
+    border: 1px solid rgb(63, 63, 63);
+    border-radius: 5px;
+    transition: all ease 200ms;
+}
+
+.card-pokemon:hover {
+    box-shadow: 0px 4px 5px 3px rgba(0, 0, 0, 0.367);
+    transform: translateY(-3px);
+}
+
+.card-pokemon img {
+    width: 100%;
+}
+
 
 #modalError{
     background-color: rgba(126, 126, 126, 0.766);
@@ -157,3 +239,4 @@ ul li:hover {
 .contenedor-logo img{
     width: 40%;
 }
+

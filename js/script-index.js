@@ -28,7 +28,7 @@ function hexToRGBA(hex, alpha) {
 }
 
 $(document).ready(function () {
-    
+    precargarPokemones();
     $("#buscar").on("click", () => {
         $.ajax({
             url: "https://pokeapi.co/api/v2/pokemon/" + ($("#txt_buscador").val()).toLowerCase(),
@@ -62,7 +62,7 @@ $(document).ready(function () {
                     </div>
                 </div>
                 `;
-                
+
                 $(".contenedor-card").html(cardPokemon);
                 $(".card-pokemon").css("background-color", rgbaColor);
                 $(".card-pokemon").css("box-shadow", `10px 7px 10px ${colorTipo}`);
@@ -112,3 +112,41 @@ function cerrarModal() {
 }
 
 
+function precargarPokemones() {
+    $.ajax({
+        url: "https://pokeapi.co/api/v2/pokemon/?limit=24",
+        dataType: "json",
+        success: function (data) {
+            // console.log(data)
+            // mostrarPrecarga(data);
+            const pokemonList = data.results;
+            for (const pokemon of pokemonList) {
+                obtenerPokemon(pokemon.url);
+            }
+        },
+    })
+}
+
+function obtenerPokemon(url) {
+    $.ajax({
+        url: url,
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            mostrarPrecarga(data);
+        }
+    });
+}
+
+function mostrarPrecarga(data) {
+    let tipo = data.types[0].type.name;
+    let colorTipo = tipoPorColor[tipo];
+    let rgbaColor = hexToRGBA(colorTipo, 1);
+    var tarjeta = `
+            <div class="card-pokemon" style="background-color: ${rgbaColor}">
+                <img src="${data.sprites.other.home.front_default}" alt="">
+            </div>
+            `
+    // console.log(data)
+    $(".contenedor-pokemones").append(tarjeta)
+}
