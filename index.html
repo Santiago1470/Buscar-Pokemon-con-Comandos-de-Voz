@@ -19,17 +19,17 @@
 <body class="contenedor-body">
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid d-flex">
-            <a class="navbar-brand" href="#">Buscador de Pokémons</a>
-            <!-- <p id="activar">Buscar por voz</p> -->
+            <a class="navbar-brand" href="index.html">Buscador de Pokémons</a>
+            <!-- <p id="activar" class="btn-buscarVoz2" hidden>Buscar por voz</p> -->
         </div>
-        <!-- <div class="container-fluid d-flex " >
-            <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon">
-            data-bs-toggle="modal" data-bs-target="#exampleModal"
-            <input id="buscar" class="btn btn-outline-info"  type="button" value="Buscar" >
-        </div> -->
+        <div class="container-fluid d-flex " >
+            <!-- <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon" hidden> -->
+            <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+            <!-- <input id="buscar" class="btn btn-outline-info"  type="button" value="Buscar" hidden> -->
+        </div>
     </nav>
     <!-- bg-dark -->
-    <section class="contenedor-inicio">
+    <section class="contenedor-inicio" hidden>
         <div class="contenedor-logo">
             <img class="logo-pokemon" src="files/logo-pokemon.png" alt="Logo de Pokémon">
         </div>
@@ -39,34 +39,49 @@
             <input id="buscar" class="btn-buscar"  type="button" value="Buscar" >
         </nav>
     </section>
-    <section class="contenedor-pokemones">
-        <!-- <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div>
-        <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div>
-        <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div>
-        <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div>
-        <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div>
-        <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div>
-        <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div>
-        <div class="card-pokemon">
-            <img src="files/25.png" alt="">
-        </div> -->
-    </section>
-    <section class="contenedor-card ">
+    <section class="contenedor-pokemones" hidden>
 
+    </section>
+    <section class="contenedor-card">
+
+    </section>
+
+    <section class="contenedor-cardP">
+        <div class="contenedor-infoPokemon">
+            <div class="texto-pokemon">
+                <p class="idPokemon">#000</p>
+                <p class="nombrePokemon">Pokémon</p>
+                <div class="datos-primarios">
+                    <p class="alturaPokemon">Altura</p>
+                    <p class="pesoPokemon">Peso</p>
+                    <p class="">4</p>
+                    <p class="">54kg</p>
+                </div>
+            </div>
+            <div class="imagen-pokemon">
+                <img src="files/25.png" alt="">
+            </div>
+        </div>
+        <div class="contenedor-barras">
+            <p>Estadísticas:</p>
+            <div>
+                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 0%"></div>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 25%"></div>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 50%"></div>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 75%"></div>
+                  </div>
+                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: 100%"></div>
+                  </div>
+            </div>
+        </div>
     </section>
     <!-- Modal -->
     <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true" >
