@@ -249,6 +249,11 @@ ul li:hover {
 .contenedor-cardP{
     width: 80%;
     margin: 0px auto;
+    background-color: rgb(180, 180, 180);
+    border-radius: 5px;
+    border: 5px outset black;
+    box-shadow: 5px 6px 10px 5px rgb(80, 80, 80);
+    padding: 20px;
 }
 
 .contenedor-infoPokemon {
@@ -276,7 +281,7 @@ ul li:hover {
 
 .datos-primarios {
     display: grid;
-    grid-template-columns: repeat(2, 100px);
+    grid-template-columns: repeat(3, 100px);
     grid-template-rows: 30px 30px;
     text-align: center;
 }
@@ -286,11 +291,50 @@ ul li:hover {
     margin: 0px;
 }
 
-.datos-primarios .alturaPokemon, .datos-primarios .pesoPokemon {
+.datos-primarios .tituloInfoPokemon {
     font-weight: bold;
 }
 
 .contenedor-barras {
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.contenedor-barras .titulo-barras {
+    padding-right: 20px;
+    margin: auto 0px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.contendor-estadisticas {
+    text-align: right;
+    width: 60%;
+}
+
+.contendor-progress {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.contendor-progress .titulo-progress {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0px 10px 0px 0px;
+    width: 70px;
+}
+
+.progress {
+    width: 80%;
+    height: 20px;
+    margin: 5px 0px;
+    border: 1px solid gray;
+}
+
+.progressNum {
+    font-weight: normal;
+    font-size: 1rem;
+    padding-left: 5px;
 }

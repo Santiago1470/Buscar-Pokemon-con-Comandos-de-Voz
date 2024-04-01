@@ -20,12 +20,12 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container-fluid d-flex">
             <a class="navbar-brand" href="index.html">Buscador de Pokémons</a>
-            <!-- <p id="activar" class="btn-buscarVoz2" hidden>Buscar por voz</p> -->
+            <p id="activar" class="btn-buscarVoz2">Buscar por voz</p>
         </div>
-        <div class="container-fluid d-flex " >
-            <!-- <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon" hidden> -->
+        <div class="container-fluid d-flex ">
+            <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon">
             <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-            <!-- <input id="buscar" class="btn btn-outline-info"  type="button" value="Buscar" hidden> -->
+            <input id="buscar" class="btn btn-outline-info" type="button" value="Buscar">
         </div>
     </nav>
     <!-- bg-dark -->
@@ -36,7 +36,7 @@
         <nav class="contendor-buscador">
             <input id="activar" class="btn-buscarVoz" type="button" value="Buscar por voz">
             <input class="buscador" type="text" id="txt_buscador" placeholder="Buscar Pokémon">
-            <input id="buscar" class="btn-buscar"  type="button" value="Buscar" >
+            <input id="buscar" class="btn-buscar" type="button" value="Buscar">
         </nav>
     </section>
     <section class="contenedor-pokemones" hidden>
@@ -52,10 +52,12 @@
                 <p class="idPokemon">#000</p>
                 <p class="nombrePokemon">Pokémon</p>
                 <div class="datos-primarios">
-                    <p class="alturaPokemon">Altura</p>
-                    <p class="pesoPokemon">Peso</p>
+                    <p class="tituloInfoPokemon">Altura</p>
+                    <p class="tituloInfoPokemon">Peso</p>
+                    <p class="tituloInfoPokemon">Tipo</p>
                     <p class="">4</p>
                     <p class="">54kg</p>
+                    <p>Electric</p>
                 </div>
             </div>
             <div class="imagen-pokemon">
@@ -63,38 +65,57 @@
             </div>
         </div>
         <div class="contenedor-barras">
-            <p>Estadísticas:</p>
-            <div>
-                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 0%"></div>
-                  </div>
-                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 25%"></div>
-                  </div>
-                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 50%"></div>
-                  </div>
-                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 75%"></div>
-                  </div>
-                  <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: 100%"></div>
-                  </div>
+            <p class="titulo-barras">Estadísticas</p>
+            <div class="contendor-estadisticas">
+                <div class="contendor-progress">
+                    <p class="titulo-progress">HP</p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 0%"></div>
+                    </div>
+                    <p class="progressNum">35</p>
+                </div>
+                <div class="contendor-progress">
+                    <p class="titulo-progress">Ataque</p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 25%"></div>
+                    </div>
+                    <p class="progressNum">55</p>
+                </div>
+                <div class="contendor-progress">
+                    <p class="titulo-progress">Defensa</p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 50%"></div>
+                    </div>
+                    <p class="progressNum">40</p>
+                </div>
+                <div class="contendor-progress">
+                    <p class="titulo-progress">Velocidad</p>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" style="width: 100%"></div>
+                    </div>
+                    <p class="progressNum">90</p>
+                </div>
             </div>
         </div>
     </section>
     <!-- Modal -->
-    <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true" >
+    <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="modalErrorLabel">Error 404: Pokémon no encontrado</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarModal()"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="cerrarModal()"></button>
                 </div>
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
-                    <button id="btn-cerrarModal" type="button" class="btn btn-info"  onclick="cerrarModal()">Cerrar</button>
+                    <button id="btn-cerrarModal" type="button" class="btn btn-info"
+                        onclick="cerrarModal()">Cerrar</button>
                 </div>
             </div>
         </div>
