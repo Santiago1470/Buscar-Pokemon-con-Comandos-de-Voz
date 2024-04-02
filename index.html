@@ -18,33 +18,33 @@
 
 <body class="contenedor-body">
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-        <div class="container-fluid d-flex">
-            <a class="navbar-brand" href="index.html">Buscador de Pokémons</a>
-            <p id="activar" class="btn-buscarVoz2">Buscar por voz</p>
+        <div id="contenedor-activarCard" class="container-fluid d-flex">
+            <a class="navbar-brand btn-inicio" href="#">Buscador de Pokémons</a>
+            <!-- <p id="activar" class="btn-buscarVoz2">Buscar por voz</p> -->
         </div>
-        <div class="container-fluid d-flex ">
-            <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon">
+        <div id="contenedor-buscadorCard" class="container-fluid d-flex">
+            <!-- <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon">
+            <input id="buscar" class="btn btn-outline-info" type="button" value="Buscar"> -->
             <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-            <input id="buscar" class="btn btn-outline-info" type="button" value="Buscar">
         </div>
     </nav>
     <!-- bg-dark -->
-    <section class="contenedor-inicio" hidden>
+    <section class="contenedor-inicio">
         <div class="contenedor-logo">
-            <img class="logo-pokemon" src="files/logo-pokemon.png" alt="Logo de Pokémon">
+            <a class="btn-inicio" href="#"><img class="logo-pokemon" src="files/logo-pokemon.png" alt="Logo de Pokémon"></a>
         </div>
-        <nav class="contendor-buscador">
+        <nav id="contenedor-buscadorInicio" class="contendor-buscador">
             <input id="activar" class="btn-buscarVoz" type="button" value="Buscar por voz">
             <input class="buscador" type="text" id="txt_buscador" placeholder="Buscar Pokémon">
             <input id="buscar" class="btn-buscar" type="button" value="Buscar">
         </nav>
     </section>
-    <section class="contenedor-pokemones" hidden>
+    <section class="contenedor-pokemones">
 
     </section>
-    <section class="contenedor-card">
+    <!-- <section class="contenedor-card" hidden>
 
-    </section>
+    </section> -->
 
     <section class="contenedor-cardP">
         <div class="contenedor-infoPokemon">
@@ -55,13 +55,13 @@
                     <p class="tituloInfoPokemon">Altura</p>
                     <p class="tituloInfoPokemon">Peso</p>
                     <p class="tituloInfoPokemon">Tipo</p>
-                    <p class="">4</p>
-                    <p class="">54kg</p>
-                    <p>Electric</p>
+                    <p id="alturaPokemon">4</p>
+                    <p id="pesoPokemon">54kg</p>
+                    <p id="tipoPokemon">Electric</p>
                 </div>
             </div>
             <div class="imagen-pokemon">
-                <img src="files/25.png" alt="">
+                <img id="imgPokemon" src="files/25.png" alt="">
             </div>
         </div>
         <div class="contenedor-barras">
@@ -69,35 +69,35 @@
             <div class="contendor-estadisticas">
                 <div class="contendor-progress">
                     <p class="titulo-progress">HP</p>
-                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                    <div id="contenedorProgressHp" class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
                         aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 0%"></div>
+                        <div id="progressHp" class="progress-bar" style="width: 0%"></div>
                     </div>
-                    <p class="progressNum">35</p>
+                    <p id="progressNumHp" class="progressNum">35</p>
                 </div>
                 <div class="contendor-progress">
                     <p class="titulo-progress">Ataque</p>
-                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                    <div id="contenedorProgressAtaque" class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
                         aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 25%"></div>
+                        <div id="progressAtaque" class="progress-bar" style="width: 25%"></div>
                     </div>
-                    <p class="progressNum">55</p>
+                    <p id="progressNumAtaque" class="progressNum">55</p>
                 </div>
                 <div class="contendor-progress">
                     <p class="titulo-progress">Defensa</p>
-                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                    <div id="contenedorProgressDefensa" class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
                         aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 50%"></div>
+                        <div id="progressDefensa" class="progress-bar" style="width: 50%"></div>
                     </div>
-                    <p class="progressNum">40</p>
+                    <p id="progressNumDefensa" class="progressNum">40</p>
                 </div>
                 <div class="contendor-progress">
                     <p class="titulo-progress">Velocidad</p>
-                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                    <div id="contenedorProgressVelocidad" class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
                         aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 100%"></div>
+                        <div id="progressVelocidad" class="progress-bar" style="width: 100%"></div>
                     </div>
-                    <p class="progressNum">90</p>
+                    <p id="progressNumVelocidad" class="progressNum">90</p>
                 </div>
             </div>
         </div>
