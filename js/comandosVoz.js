@@ -13,11 +13,6 @@ activarComandos.addEventListener('click', function () {
         //activarComandos.textContent = "Desactivar comandos de voz";
         activado = true;
         comandoVoz = false;
-    } else {
-        // artyom.say("Comandos de voz desactivados");
-        // artyom.dontObey();
-        // activarComandos.textContent = "Activar comandos de voz";
-        // activado = false;
     }
 });
 var comandoVoz = false;
@@ -35,20 +30,6 @@ artyom.addCommands({
             artyom.dontObey()
             comandoVoz = false;
         }
-        // else if(i == 1){
-        //     artyom.obey();
-        //     artyom.say("Comandos de voz activados");
-        //     activarComandos.textContent = "Desactivar comandos de voz";
-        // } else if (i == 2) {
-        //     artyom.dontObey();
-        //     artyom.say("Comandos de voz desactivados");
-        //     activarComandos.textContent = "Activar comandos de voz";
-        // } else if(i == 3){
-        //     let txtBuscador = document.querySelector("#txt_buscador");
-        //     let buscar = textoPorVoz.split(" ");
-        //     txtBuscador.value = buscar[1].toLowerCase();
-        //     document.querySelector("#buscar").click();
-        // }
     }
 });
 

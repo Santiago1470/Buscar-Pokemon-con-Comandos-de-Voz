@@ -42,6 +42,13 @@ h5 {
 
 /*--------------- Sección estilos contenedor nav y componentes del buscador ---------------*/
 
+.contendor-buscador {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+}
+
 .btn-inicio {
     cursor: pointer;
 }
@@ -390,7 +397,50 @@ ul li:hover {
 }
 
 
+
+@media(max-width: 900px){
+    .contenedor-pokemones {
+        grid-template-columns: repeat(3, 200px);
+    }
+}
+
+
 @media(max-width: 700px){
+
+    .contenedor-logo img {
+        width: 50%;
+    }
+
+    .contendor-buscador {
+        flex-direction: column;
+    }
+
+    .contendor-buscador .btn-buscarVoz {
+        width: 130px;
+        margin: 0px auto;
+    }
+
+    .contendor-buscador .buscador {
+        width: 300px;
+        margin: 3px auto;
+    }
+
+    .contendor-buscador .btn-buscar {
+        width: 60px;
+        margin: 0px auto;
+    }
+
+    .contenedor-pokemones {
+        grid-template-columns: repeat(3, 180px);
+        row-gap: 15px;
+        column-gap: 15px;
+    }
+
+    .card-pokemon {
+        width: 180px;
+        height: 180px;
+    }
+
     .contenedor-cardP{
         width: 90%;
     }
@@ -424,6 +474,53 @@ ul li:hover {
         margin-top: 10px;
         width: 100%;
     }
+}
+/* @media(max-width: 400px){
+    .contenedor-pokemones {
+        grid-template-columns: repeat(1, 200px);
+    }
+} */
+
+
+
+@media(max-width: 600px){
+    .contenedor-pokemones {
+        grid-template-columns: repeat(2, 200px);
+        margin: 0px auto;
+        
+    }
+
+    .contenedor-pokemones img {
+        width: 100%;
+    }
+
+    .contenedor-logo img {
+        width: 70%;
+    }
+    
+}
+
+@media(max-width: 450px){
+    .contenedor-pokemones {
+        grid-template-columns: repeat(1, 200px);
+        margin: 0px auto;
+        
+    }
+
+    .contenedor-pokemones img {
+        width: 100%;
+    }
+
+    .card-pokemon {
+        width: 200px;
+        height: 200px;
+    }
+    
+    
+    .contenedor-logo img {
+        width: 80%;
+    }
+
 }
 
 @media(min-width: 1100px) {
