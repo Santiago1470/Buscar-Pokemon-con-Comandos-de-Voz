@@ -37,6 +37,12 @@ $(document).ready(function () {
         $("#buscar").click()
     });
 
+    $("#txt_buscador").on("keypress", (event) => {
+        if(event.keyCode == 13){
+            $("#buscar").click()
+        }
+    })
+
     $("#buscar").on("click", () => {
         $.ajax({
             url: "https://pokeapi.co/api/v2/pokemon/" + ($("#txt_buscador").val()).toLowerCase(),
@@ -148,15 +154,18 @@ function cerrarModal() {
     body.style.overflowY = "visible";
 }
 
-
+var rangoPokemones = 0;
 function precargarPokemones() {
     $.ajax({
-        url: "https://pokeapi.co/api/v2/pokemon/?limit=24",
+        // ?limit=24&offset=${rangoPokemones}
+        // ?offset=${rangoPokemones}&limit=24
+        url: `https://pokeapi.co/api/v2/pokemon/?offset=${rangoPokemones}&limit=24`,
         dataType: "json",
         success: function (data) {
             // console.log(data)
             // mostrarPrecarga(data);
             const pokemonList = data.results;
+            rangoPokemones += pokemonList.length
             for (const pokemon of pokemonList) {
                 obtenerPokemon(pokemon.url);
             }
@@ -208,6 +217,9 @@ function ocultarInicio() {
     // $("#contenedor-buscadorInicio").html("")
     // $(".contenedor-inicio").hide()
     $(".contenedor-pokemones").hide()
+    $(".contenedor-verMas").hide()
+    let campoBusqueda = document.querySelector("#txt_buscador")
+    campoBusqueda.value = ""
 }
 
 function ocultarCardPokemon() {
@@ -226,9 +238,16 @@ function ocultarCardPokemon() {
     // $("#contenedor-buscadorInicio").html(buscadorInicio)
     // $(".contenedor-inicio").show()
     $(".contenedor-pokemones").show()
+    $(".contenedor-verMas").show()
+    let campoBusqueda = document.querySelector("#txt_buscador")
+    campoBusqueda.value = ""
 }
 
 $(".btn-inicio").on("click", () => {
     ocultarCardPokemon()
 })
 
+
+$(".btn-verMas").on("click", () => {
+    precargarPokemones()
+})

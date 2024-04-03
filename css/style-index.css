@@ -40,6 +40,8 @@ h5 {
     background-color: #FFFFFF99;
 }
 
+/*--------------- Sección estilos contenedor nav y componentes del buscador ---------------*/
+
 .btn-inicio {
     cursor: pointer;
 }
@@ -130,86 +132,6 @@ h5 {
     border: 1px solid #254390;
 }
 
-
-.contenedor-pokemones {
-    padding: 10px 0px 40px 0px;
-    display: grid;
-    grid-template-columns: repeat(4, 200px);
-    gap: 15px;
-    width: 80%;
-    margin: 0px auto;
-    justify-content: center;
-}
-
-.card-pokemon {
-    width: 200px;
-    height: 200px;
-    margin: 0px auto;
-    background-color: rgb(205, 205, 205);
-    border: 1px solid rgb(63, 63, 63);
-    border-radius: 5px;
-    transition: all ease 200ms;
-    cursor: pointer;
-}
-
-.card-pokemon:hover {
-    box-shadow: 0px 5px 3px 3px rgba(0, 0, 0, 0.367);
-    transform: translateY(-10px);
-}
-
-.card-pokemon:active{
-    color: rgb(172, 172, 172);
-    box-shadow: none;
-    transform: scale(0.98);
-    transition: all ease 200ms;
-}
-
-.card-pokemon img {
-    width: 100%;
-}
-
-
-#modalError{
-    background-color: rgba(126, 126, 126, 0.766);
-}
-
-/* .modal {
-    --bs-modal-margin: 8rem;
-} */
-
-.modal-content {
-    background-color: rgba(128, 128, 128, 0.722);
-    --bs-modal-header-border-color: rgba(128, 128, 128, 0.5);
-    --bs-modal-footer-border-color: rgba(128, 128, 128, 0.5);
-    border: 1.5px solid rgb(95, 95, 95);
-    box-shadow: 0px 0px 10px 3px rgb(109, 109, 109);
-}
-
-.modal-body {
-    align-self: center;
-}
-
-.modal-content {
-    width: 85%;
-}
-
-.btn-info {
-    --bs-btn-color: #FFFFFF;
-    --bs-btn-hover-color: #FFFFFF;
-    --bs-btn-active-color: #FFFFFF;
-    --bs-btn-disabled-bg: transparent;
-}
-
-.btn-outline-info {
-    --bs-btn-hover-color: #FFFFFF;
-    --bs-btn-active-color: #FFFFFF;
-}
-
-.info-p-pokemon {
-    margin: 0 auto;
-    width: 300px;
-}
-
 .autocompletar {
     border: 1px solid #ccc;
     border-radius: 15px;
@@ -248,6 +170,9 @@ ul li:hover {
     background-color: rgb(0, 255, 255);
 }
 
+
+/*--------------- Sección estilos contenedor del inicio (24 pokémones) ---------------*/
+
 .contenedor-logo {
     text-align: center;
     padding-top: 10px;
@@ -257,10 +182,113 @@ ul li:hover {
     width: 40%;
 }
 
+.contenedor-pokemones {
+    padding: 10px 0px 10px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 15px;
+    width: 80%;
+    margin: 0px auto;
+    justify-content: center;
+}
+
+.card-pokemon {
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+    background-color: rgb(205, 205, 205);
+    border: 1px solid rgb(63, 63, 63);
+    border-radius: 5px;
+    transition: all ease 200ms;
+    cursor: pointer;
+}
+
+.card-pokemon:hover {
+    box-shadow: 0px 5px 3px 3px rgba(0, 0, 0, 0.367);
+    transform: translateY(-10px);
+}
+
+.card-pokemon:active{
+    color: rgb(172, 172, 172);
+    box-shadow: none;
+    transform: scale(0.98);
+    transition: all ease 200ms;
+}
+
+.card-pokemon img {
+    width: 100%;
+}
+
+.contenedor-verMas {
+    text-align: center;
+}
+
+.contenedor-verMas .btn-verMas {
+    /* background-color: #4770D9; */
+    background-color: rgb(196, 0, 0);
+    color: white;
+    /* border: 1px solid #254390; */
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 1.1rem;
+    box-shadow: 0px 3px 6px 3px rgb(61, 61, 61);
+    transition: transform 0.3s, box-shadow 0.2s;
+    margin: 10px 0px 30px 0px;
+}
+
+.contenedor-verMas .btn-verMas:active {
+    transform: translateY(2px);
+    box-shadow: 0px 3px 5px 3px rgba(0, 0, 0, 0.2);
+    border: 1px solid #254390;
+}
+
+
+/*--------------- Sección estilos del modal para mostrar error ---------------*/
+
+#modalError{
+    background-color: rgba(126, 126, 126, 0.766);
+}
+
+.modal-content {
+    background-color: rgba(128, 128, 128, 0.722);
+    --bs-modal-header-border-color: rgba(128, 128, 128, 0.5);
+    --bs-modal-footer-border-color: rgba(128, 128, 128, 0.5);
+    border: 1.5px solid rgb(95, 95, 95);
+    box-shadow: 0px 0px 10px 3px rgb(109, 109, 109);
+}
+
+.modal-body {
+    align-self: center;
+}
+
+.modal-content {
+    width: 85%;
+}
+
+.btn-info {
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-active-color: #FFFFFF;
+    --bs-btn-disabled-bg: transparent;
+}
+
+.btn-outline-info {
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-active-color: #FFFFFF;
+}
+
+.info-p-pokemon {
+    margin: 0 auto;
+    width: 300px;
+}
+
+
+/*--------------- Sección estilos contenedor de la tarjeta (Card) del pokémon ---------------*/
 
 .contenedor-cardP{
     width: 80%;
-    margin: 30px auto;
+    margin: 10px auto 30px auto;
     background-color: rgb(180, 180, 180);
     border-radius: 5px;
     border: 5px outset black;
@@ -360,6 +388,7 @@ ul li:hover {
     font-size: 1rem;
     padding-left: 5px;
 }
+
 
 @media(max-width: 700px){
     .contenedor-cardP{
