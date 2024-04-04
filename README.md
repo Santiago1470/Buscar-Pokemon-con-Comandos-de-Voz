@@ -12,6 +12,7 @@ Para realizar la búsqueda de un Pokémon hay cinco opciones:
 5. Cuando se encuentre visualizando una tarjeta de pokémon, puede dar clic en una de las flechas, que se encuentran en la parte superiror de la tarjeta, para navegar entre cada pokémon y mostrar la información del pokémon que está atrás o adelante.
   
 En caso de que el Pokémon no sea encontrado, la página le devolverá un mensaje indicando que lo que ha sucedido, y deberá dar clic en la "x" o en el botón "Cerrar" para hacer una nueva búsqueda.  
+  
 Si desea volver a la página inicial o principal, puede dar clic en el logo de Pokémon o en "Buscador de pokemones" que se encuentra en la parte superior izquierda. Finalmente, si desea ver más pokémones de lo que ya están en la página de incio, puede deslizar hacia el final de la página y dar clic en el botón "Ver más", este le cargará 24 pokemones adicionales a los que ya está visualizando.  
   
 Nota: recuerde que para hacer búsquedas con la voz, debe tener micrófono en su dispositivo y dar el permiso requerido al sitio para hacer uso de su micrófono.
