@@ -45,8 +45,6 @@ $(document).ready(function () {
         }
     })
 
-    
-
     $("#buscar").on("click", () => {
         $.ajax({
             url: "https://pokeapi.co/api/v2/pokemon/" + ($("#txt_buscador").val()).toLowerCase(),
@@ -120,11 +118,6 @@ $(document).ready(function () {
    
 });
 
-// var txtBuscador = document.querySelector("#txt_buscador");
-// txtBuscador.addEventListener("keypress", () => {
-
-// });
-
 var modal = document.querySelector("#modalError");
 var botonCerrarModal = document.querySelector("#btn-cerrarModal");
 var body = document.querySelector("body");
@@ -137,13 +130,9 @@ function cerrarModal() {
 var rangoPokemones = 0;
 function precargarPokemones() {
     $.ajax({
-        // ?limit=24&offset=${rangoPokemones}
-        // ?offset=${rangoPokemones}&limit=24
         url: `https://pokeapi.co/api/v2/pokemon/?offset=${rangoPokemones}&limit=24`,
         dataType: "json",
         success: function (data) {
-            // console.log(data)
-            // mostrarPrecarga(data);
             const pokemonList = data.results;
             rangoPokemones += pokemonList.length
             for (const pokemon of pokemonList) {

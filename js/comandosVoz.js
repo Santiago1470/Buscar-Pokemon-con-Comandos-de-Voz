@@ -10,7 +10,6 @@ activarComandos.addEventListener('click', function () {
     if (!activado) {
         //artyom.say("Comandos de voz activados");
         artyom.obey();
-        //activarComandos.textContent = "Desactivar comandos de voz";
         activado = true;
         comandoVoz = false;
         alertaMicrofono.style.display = "block";
@@ -19,7 +18,7 @@ activarComandos.addEventListener('click', function () {
 var comandoVoz = false;
 var alertaMicrofono = document.querySelector(".alertaMicrofono");
 artyom.addCommands({
-    indexes: ["comando", "Buscar por voz"/*, "activar comandos de voz", "desactivar comandos de voz", "buscar"*/],
+    indexes: ["comando", "Buscar por voz"],
     action: function (i) {
         if (i == 0) {
             console.log("recibido");
