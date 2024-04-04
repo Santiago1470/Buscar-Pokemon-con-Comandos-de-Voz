@@ -5,39 +5,8 @@ body {
     background-position: center;
 }
 
-.contenedor-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*height: 94vh;*/
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
-
 h5 {
     text-align: center;
-}
-
-.card-pokemon {
-    width: 350px;
-    height: auto;
-    border: none;
-}
-
-
-.imagen {
-    display: flex;
-    width: 300px;
-    height: 280px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
-
-#pokemon {
-    border: 5px outset wheat;
-    border-radius: 15px;
-    background-color: #FFFFFF99;
 }
 
 /*--------------- Sección estilos contenedor nav y componentes del buscador ---------------*/
@@ -87,22 +56,6 @@ h5 {
     border: 1px solid #254390;
 }
 
-.btn-buscarVoz2 {
-    margin: auto 0px;
-    cursor: pointer;
-}
-
-.btn-buscarVoz2:hover {
-    transform: scale(1.05);
-    transition: all ease 100ms;
-}
-
-.btn-buscarVoz2:active {
-    color: rgb(172, 172, 172);
-    transform: scale(0.9);
-    transition: all ease 200ms;
-}
-
 .contendor-buscador {
     padding: 10px;
     text-align: center;
@@ -144,7 +97,6 @@ h5 {
     border-radius: 15px;
     background-color: #fff;
     width: 569px;
-    font-family: cursive;
 }
 
 
@@ -166,7 +118,7 @@ h5 {
     cursor: pointer;
     list-style: none;
     padding-left: 0px;
-    width: 400px;
+    width: 300px;
 }
 
 ul li {
