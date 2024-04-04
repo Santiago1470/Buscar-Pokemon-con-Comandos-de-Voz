@@ -27,10 +27,12 @@ function hexToRGBA(hex, alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
+var idPokemon = 0
+
 $(document).ready(function () {
     precargarPokemones();
     ocultarCardPokemon();
-    $(document).on("click", ".card-pokemon", function() {
+    $(document).on("click", ".card-pokemon", function () {
         let idPokemon = $(this).attr("idpokemon")
         let txtBuscador = document.querySelector("#txt_buscador");
         txtBuscador.value = idPokemon
@@ -38,10 +40,12 @@ $(document).ready(function () {
     });
 
     $("#txt_buscador").on("keypress", (event) => {
-        if(event.keyCode == 13){
+        if (event.keyCode == 13) {
             $("#buscar").click()
         }
     })
+
+    
 
     $("#buscar").on("click", () => {
         $.ajax({
@@ -54,33 +58,6 @@ $(document).ready(function () {
                 let mov1 = (data.abilities[0].ability.name).toUpperCase();
                 let mov2 = data.abilities.length > 1 ? (data.abilities[1].ability.name).toUpperCase() : "No existe";
                 let rgbaColor = hexToRGBA(colorTipo, 1);
-                // var cardPokemon = `
-                // <div class="card card-pokemon">
-                //     <div class="imagen">
-                //     <img src="${data.sprites.other.home.front_default}" width="250px" id="pokemon">
-                //     </div>
-                //     <div class="card-body info-p-pokemon">
-                //         <h5 class="card-title titulo-card">${data.name}</h5>
-                //         <p class="card-text">Movimientos:</p>
-                //         <ul>
-                //         <p class="card-text">Movimiento: ${mov1}</p>
-                //         <p class="card-text">Movimiento: ${mov2}</p>
-                //         </ul>
-                //         <p class="card-text">Altura: ${data.height} pies</p>
-                //         <p class="card-text">Peso: ${data.weight} libras</p>
-                //         <p class="card-text">Tipo: ${tipo}</p>
-                //         <p class="card-text">Puntos de Vida: ${data.stats[0].base_stat}</p>
-                //         <p class="card-text">Puntos de Ataque: ${data.stats[1].base_stat}</p>
-                //         <p class="card-text">Puntos de Defensa: ${data.stats[2].base_stat}</p>
-                //         <p class="card-text">Velocidad: ${data.stats[5].base_stat}</p>
-                //     </div>
-                // </div>
-                // `;
-
-                // $(".contenedor-card").html(cardPokemon);
-                // $(".card-pokemon").css("background-color", rgbaColor);
-                // $(".card-pokemon").css("box-shadow", `10px 7px 10px ${colorTipo}`);
-                // $("#pokemon").css("filter", `drop-shadow(10px 7px 10px ${colorTipo})`);
 
                 ocultarInicio()
 
@@ -90,6 +67,7 @@ $(document).ready(function () {
                 let velocidad = data.stats[5].base_stat
 
                 $(".idPokemon").text(`#${data.id}`).css("color", rgbaColor)
+                idPokemon = data.id
                 $(".nombrePokemon").text(data.name)
                 $("#alturaPokemon").text(data.height)
                 $("#pesoPokemon").text(`${data.weight}kg`)
@@ -116,7 +94,7 @@ $(document).ready(function () {
             if (jqXHR.status == "404") {
                 let nombreP = $("#txt_buscador").val();
                 $("#modalError").attr("class", "modal fade show").attr("style", "display: block");
-                $(".modal-body").html(`<img src="files/error.png"><p>El pokémon con el nombre <strong>${nombreP}</strong> no existe.</p>`);
+                $(".modal-body").html(`<img src="files/error.png"><p>El pokémon con el nombre o id <strong>${nombreP}</strong> no existe.</p>`);
                 $("body").attr("style", "overflow-y: hidden");
             }
         });
@@ -138,6 +116,8 @@ $(document).ready(function () {
         minLength: 1,
         appendTo: ".autocompletar"
     }).autocomplete("widget").addClass("autocompletar");
+
+   
 });
 
 // var txtBuscador = document.querySelector("#txt_buscador");
@@ -198,24 +178,8 @@ function mostrarPrecarga(data) {
 }
 
 function ocultarInicio() {
-    let buscadorCardPokemon = `
-    <input class="form-control me-2" type="text" name="" id="txt_buscador" placeholder="Buscar Pokémon">
-    <input id="buscar" class="btn btn-outline-info" type="button" value="Buscar">
-    `
-    let buscadorVozCardPokemon = `
-    <p id="activar" class="btn-buscarVoz2">Buscar por voz</p>
-    `
-
-    // $("#contenedor-activarCard").append(buscadorVozCardPokemon)
-    // $("#contenedor-buscadorCard").html(buscadorCardPokemon)
-
-    // $("#activar").show()
-    // $("#contenedor-buscador").show()
     $(".contenedor-cardP").show()
 
-
-    // $("#contenedor-buscadorInicio").html("")
-    // $(".contenedor-inicio").hide()
     $(".contenedor-pokemones").hide()
     $(".contenedor-verMas").hide()
     let campoBusqueda = document.querySelector("#txt_buscador")
@@ -223,20 +187,8 @@ function ocultarInicio() {
 }
 
 function ocultarCardPokemon() {
-    let buscadorInicio = `
-        <input id="activar" class="btn-buscarVoz" type="button" value="Buscar por voz">
-        <input class="buscador" type="text" id="txt_buscador" placeholder="Buscar Pokémon">
-        <input id="buscar" class="btn-buscar" type="button" value="Buscar">
-    `
-    // visibility: hidden;
-    // $("#activar").hide()
-    // $("#contenedor-buscador").hide()
     $(".contenedor-cardP").hide()
-    // $("#activar").remove()
-    // $("#contenedor-buscadorCard").html("")
 
-    // $("#contenedor-buscadorInicio").html(buscadorInicio)
-    // $(".contenedor-inicio").show()
     $(".contenedor-pokemones").show()
     $(".contenedor-verMas").show()
     let campoBusqueda = document.querySelector("#txt_buscador")
@@ -250,4 +202,16 @@ $(".btn-inicio").on("click", () => {
 
 $(".btn-verMas").on("click", () => {
     precargarPokemones()
+})
+
+$("#flecha-izquierda").on("click", () => {
+    let campoBusqueda = document.querySelector("#txt_buscador")
+    campoBusqueda.value = idPokemon - 1
+    $("#buscar").click()
+})
+
+$("#flecha-derecha").on("click", () => {
+    let campoBusqueda = document.querySelector("#txt_buscador")
+    campoBusqueda.value = idPokemon + 1
+    $("#buscar").click()
 })

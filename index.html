@@ -38,18 +38,25 @@
             <input class="buscador" type="text" id="txt_buscador" placeholder="Buscar Pokémon">
             <input id="buscar" class="btn-buscar" type="button" value="Buscar">
         </nav>
+        <span class="alertaMicrofono">Micrófono activado, escuchando...</span>
     </section>
+    
     <section class="contenedor-pokemones">
 
     </section>
+    
     <div class="contenedor-verMas">
         <input class="btn-verMas" type="button" value="Ver más">
     </div>
     <!-- <section class="contenedor-card" hidden>
 
     </section> -->
-
+    
     <section class="contenedor-cardP">
+        <div class="contendorFlecha">
+            <img id="flecha-izquierda" src="files/flecha-izquierda.png" alt="Flecha hacia la izquierda">
+            <img id="flecha-derecha" src="files/flecha-derecha.png" alt="Flecha hacia la derecha">
+        </div>
         <div class="contenedor-infoPokemon">
             <div class="texto-pokemon">
                 <p class="idPokemon">#000</p>
@@ -104,7 +111,9 @@
                 </div>
             </div>
         </div>
+        
     </section>
+    
     <!-- Modal -->
     <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="modalErrorLabel" aria-hidden="true">
         <div class="modal-dialog">

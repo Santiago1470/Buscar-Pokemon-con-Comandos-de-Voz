@@ -13,9 +13,11 @@ activarComandos.addEventListener('click', function () {
         //activarComandos.textContent = "Desactivar comandos de voz";
         activado = true;
         comandoVoz = false;
+        alertaMicrofono.style.display = "block";
     }
 });
 var comandoVoz = false;
+var alertaMicrofono = document.querySelector(".alertaMicrofono");
 artyom.addCommands({
     indexes: ["comando", "Buscar por voz"/*, "activar comandos de voz", "desactivar comandos de voz", "buscar"*/],
     action: function (i) {
@@ -29,6 +31,7 @@ artyom.addCommands({
             document.querySelector("#buscar").click();
             artyom.dontObey()
             comandoVoz = false;
+            alertaMicrofono.style.display = "none";
         }
     }
 });
@@ -52,12 +55,14 @@ artyom.redirectRecognizedTextOutput(function (recognized, isFinal) {
         let buscar = textoPorVoz.trim().split(" ");
         if(buscar[0] == "Buscar"){
             comandoVoz = true;
+            alertaMicrofono.style.display = "block";
         }
         if (!comandoVoz) {
             let txtBuscador = document.querySelector("#txt_buscador");
             txtBuscador.value = textoPorVoz.trim();
             document.querySelector("#buscar").click();
             artyom.dontObey();
+            alertaMicrofono.style.display = "none";
         }
         activado = false;
     } else {
