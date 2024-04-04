@@ -113,9 +113,16 @@ $(document).ready(function () {
         },
         minLength: 1,
         appendTo: ".autocompletar"
+        // ,
+        // open: function (event, ui) {
+        //     $(".ui-autocomplete").find("li").addClass("focusLista");
+        // },
+        // close: function (event, ui) {
+        //     $(".ui-autocomplete").find("li").removeClass("focusLista");
+        // }
     }).autocomplete("widget").addClass("autocompletar");
 
-   
+
 });
 
 var modal = document.querySelector("#modalError");
@@ -204,3 +211,11 @@ $("#flecha-derecha").on("click", () => {
     campoBusqueda.value = idPokemon + 1
     $("#buscar").click()
 })
+
+// $('#txt_buscador').on('focus', 'li', function () {
+//     $(".ui-autocomplete").find(this).addClass("focusLista");
+// });
+
+// $('#txt_buscador').on('blur', 'li', function() {
+//     $(".ui-autocomplete").find("li").removeClass("focusLista");
+//   });
